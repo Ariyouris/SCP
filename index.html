@@ -1,312 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Stream4Stream</title>
 
-<style>
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:system-ui,-apple-system,sans-serif;
-}
-
-body{
-background:#0a0f1d;
-color:#fff;
-}
-
-.header{
-padding:18px;
-border-bottom:1px solid #1b2235;
-display:flex;
-justify-content:space-between;
-align-items:center;
-}
-
-.logo{
-font-size:22px;
-font-weight:700;
-}
-
-.logo span{
-color:#1ed760;
-}
-
-.nav{
-display:flex;
-gap:20px;
-padding:14px 18px;
-border-bottom:1px solid #1b2235;
-overflow-x:auto;
-}
-
-.nav a{
-color:#9ca3af;
-text-decoration:none;
-font-size:14px;
-white-space:nowrap;
-}
-
-.nav a.active{
-color:#1ed760;
-font-weight:600;
-}
-
-.container{
-padding:18px;
-}
-
-.stats{
-display:grid;
-grid-template-columns:1fr 1fr;
-gap:12px;
-margin-bottom:18px;
-}
-
-.stat{
-background:#10182b;
-border:1px solid #1b2235;
-border-radius:12px;
-padding:18px;
-}
-
-.stat-number{
-font-size:28px;
-font-weight:700;
-margin-bottom:5px;
-}
-
-.stat-label{
-font-size:13px;
-color:#8b95a7;
-}
-
-.alerts{
-display:flex;
-gap:10px;
-overflow-x:auto;
-margin-bottom:20px;
-}
-
-.alert{
-background:#2a1f07;
-border:1px solid #4a3708;
-color:#fbbf24;
-padding:10px 14px;
-border-radius:10px;
-font-size:13px;
-white-space:nowrap;
-}
-
-.section-header{
-display:flex;
-justify-content:space-between;
-align-items:center;
-margin-bottom:14px;
-}
-
-.section-title{
-font-size:20px;
-font-weight:700;
-}
-
-.add-btn{
-background:#1ed760;
-color:black;
-padding:10px 16px;
-border-radius:10px;
-font-weight:700;
-text-decoration:none;
-}
-
-.table{
-background:#10182b;
-border:1px solid #1b2235;
-border-radius:14px;
-overflow:hidden;
-}
-
-.row{
-display:grid;
-grid-template-columns:2fr .8fr 1fr .8fr;
-padding:14px;
-border-bottom:1px solid #1b2235;
-align-items:center;
-}
-
-.row:last-child{
-border-bottom:none;
-}
-
-.header-row{
-color:#8b95a7;
-font-size:12px;
-text-transform:uppercase;
-}
-
-.playlist-name{
-font-weight:600;
-}
-
-.small{
-font-size:12px;
-color:#8b95a7;
-margin-top:4px;
-}
-
-.good{
-color:#1ed760;
-font-weight:600;
-}
-
-.warning{
-color:#fbbf24;
-font-weight:600;
-}
-
-.footer{
-padding:25px;
-text-align:center;
-font-size:12px;
-color:#6b7280;
-}
-
-@media(max-width:600px){
-
-.row{
-grid-template-columns:1.8fr .7fr .8fr .7fr;
-font-size:13px;
-}
-
-.section-title{
-font-size:18px;
-}
-
-}
-</style>
+<link rel="stylesheet" href="style.css">
 
 </head>
+
 <body>
-
-<div class="header">
-<div class="logo">
-🎵 <span>Stream4Stream</span>
-</div>
-</div>
-
-<div class="nav">
-<a href="index.html" class="active">Dashboard</a>
-<a href="playlist.html">Playlists</a>
-<a href="members.html">Members</a>
-<a href="reports.html">Reports</a>
-<a href="settings.html">Settings</a>
-</div>
 
 <div class="container">
 
-<div class="stats">
+<div class="box">
 
-<div class="stat">
-<div class="stat-number">5</div>
-<div class="stat-label">Playlists</div>
-</div>
+<div class="title">
 
-<div class="stat">
-<div class="stat-number">250</div>
-<div class="stat-label">Members</div>
-</div>
+<h1>STREAM4STREAM</h1>
 
-<div class="stat">
-<div class="stat-number">250</div>
-<div class="stat-label">Total Songs</div>
-</div>
-
-<div class="stat">
-<div class="stat-number good">143</div>
-<div class="stat-label">Check-ins Today</div>
-</div>
+<p>COMMUNITY HUB</p>
 
 </div>
 
-<div class="alerts">
-<div class="alert">2 pending join requests</div>
-<div class="alert">1 pending replacement request</div>
-</div>
+<button id="googleLogin">
 
-<div class="section-header">
-<div class="section-title">All Playlists</div>
-<a href="#" class="add-btn">+ Add Playlist</a>
-</div>
+<svg xmlns="http://www.w3.org/2000/svg"
+width="22"
+height="22"
+viewBox="0 0 48 48">
 
-<div class="table">
+<path fill="#EA4335" d="M24 9.5c3.54 0 6.72 1.22 9.22 3.61l6.88-6.88C35.91 2.43 30.37 0 24 0 14.62 0 6.51 5.38 2.56 13.22l8 6.22C12.44 13.37 17.74 9.5 24 9.5z"/>
 
-<div class="row header-row">
-<div>Playlist</div>
-<div>Songs</div>
-<div>Members</div>
-<div>Check-ins</div>
-</div>
+<path fill="#4285F4" d="M46.98 24.55c0-1.57-.14-3.08-.39-4.55H24v9.02h12.94c-.56 3-2.25 5.54-4.8 7.24l7.77 6.03C44.45 38.09 46.98 31.89 46.98 24.55z"/>
 
-<div class="row">
-<div>
-<div class="playlist-name">Indie Trending</div>
-<div class="small">Independent Artists Promotion</div>
-</div>
-<div>50</div>
-<div>50/50</div>
-<div class="good">✓ 43</div>
-</div>
+<path fill="#FBBC05" d="M10.56 28.44A14.5 14.5 0 019.5 24c0-1.54.38-3 .99-4.39l-8-6.22A23.89 23.89 0 000 24c0 3.87.92 7.53 2.56 10.78l8-6.34z"/>
 
-<div class="row">
-<div>
-<div class="playlist-name">Summer Push</div>
-<div class="small">Daily streaming target</div>
-</div>
-<div>50</div>
-<div>47/50</div>
-<div class="good">✓ 39</div>
-</div>
+<path fill="#34A853" d="M24 48c6.48 0 11.92-2.14 15.89-5.82l-7.77-6.03c-2.16 1.45-4.92 2.3-8.12 2.3-6.26 0-11.56-3.87-13.44-9.32l-8 6.34C6.51 42.62 14.62 48 24 48z"/>
 
-<div class="row">
-<div>
-<div class="playlist-name">Comeback Week</div>
-<div class="small">Artist comeback campaign</div>
-</div>
-<div>50</div>
-<div>50/50</div>
-<div class="good">✓ 50</div>
-</div>
+</svg>
 
-<div class="row">
-<div>
-<div class="playlist-name">New Release Boost</div>
-<div class="small">Fresh release support</div>
-</div>
-<div>50</div>
-<div>44/50</div>
-<div class="warning">35</div>
-</div>
+<span>LOGIN WITH GOOGLE</span>
 
-<div class="row">
-<div>
-<div class="playlist-name">Global Push</div>
-<div class="small">International target</div>
-</div>
-<div>50</div>
-<div>42/50</div>
-<div class="warning">31</div>
-</div>
-
-</div>
-
-</div>
+</button>
 
 <div class="footer">
-Stream4Stream Dashboard v2
+
+<p>PRESS TO CONTINUE</p>
+
 </div>
 
+</div>
+
+</div>
+
+<script src="script.js"></script>
+
 </body>
+
 </html>
