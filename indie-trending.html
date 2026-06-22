@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Indie Trending - Stream4Stream</title>
+
+<style>
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:system-ui,-apple-system,sans-serif;
+}
+
+body{
+background:#0a0f1d;
+color:#fff;
+}
+
+.header{
+padding:18px;
+border-bottom:1px solid #1b2235;
+}
+
+.back-link{
+color:#1ed760;
+text-decoration:none;
+font-size:14px;
+}
+
+.container{
+max-width:800px;
+margin:auto;
+padding:20px;
+}
+
+.playlist-card{
+background:#10182b;
+border:1px solid #1b2235;
+border-radius:16px;
+padding:24px;
+margin-bottom:20px;
+}
+
+.playlist-title{
+font-size:32px;
+font-weight:700;
+margin-bottom:12px;
+}
+
+.playlist-description{
+color:#9ca3af;
+line-height:1.7;
+font-size:15px;
+}
+
+.spotify-btn{
+display:block;
+margin-top:20px;
+background:#1ed760;
+color:black;
+text-decoration:none;
+text-align:center;
+padding:14px;
+border-radius:12px;
+font-weight:700;
+}
+
+.progress-card{
+background:#10182b;
+border:1px solid #1b2235;
+border-radius:16px;
+padding:24px;
+}
+
+.progress-label{
+font-size:14px;
+color:#9ca3af;
+margin-bottom:8px;
+}
+
+.progress-number{
+font-size:42px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.progress-bar{
+height:12px;
+background:#1b2235;
+border-radius:20px;
+overflow:hidden;
+margin-bottom:20px;
+}
+
+.progress-fill{
+width:0%;
+height:100%;
+background:#1ed760;
+}
+
+.checkin-btn{
+width:100%;
+padding:15px;
+border:none;
+border-radius:12px;
+font-size:16px;
+font-weight:700;
+background:#374151;
+color:#9ca3af;
+cursor:not-allowed;
+}
+
+.note{
+margin-top:12px;
+font-size:13px;
+color:#6b7280;
+text-align:center;
+}
+
+.footer{
+padding:30px;
+text-align:center;
+font-size:12px;
+color:#6b7280;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+<a href="playlist.html" class="back-link">
+← Back to Playlists
+</a>
+</div>
+
+<div class="container">
+
+<div class="playlist-card">
+
+<div class="playlist-title">
+🎵 Indie Trending
+</div>
+
+<div class="playlist-description">
+A curated playlist featuring trending indie artists, alternative releases,
+and emerging underground music. Stream all tracks completely to unlock
+your daily check-in and support independent musicians.
+</div>
+
+<a href="https://open.spotify.com/playlist/1jGsSrdKO3TdFGkE0lu6NG"
+target="_blank"
+class="spotify-btn">
+Open Spotify Playlist
+</a>
+
+</div>
+
+<div class="progress-card">
+
+<div class="progress-label">
+Today's Progress
+</div>
+
+<div class="progress-number">
+0 / 50
+</div>
+
+<div class="progress-bar">
+<div class="progress-fill"></div>
+</div>
+
+<button class="checkin-btn">
+Check-In Locked
+</button>
+
+<div class="note">
+Complete all playlist songs to unlock check-in.
+</div>
+
+</div>
+
+</div>
+
+<div class="footer">
+Stream4Stream Playlist Page
+</div>
+
+</body>
+</html>
