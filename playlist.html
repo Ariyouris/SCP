@@ -29,12 +29,132 @@ font-size:24px;
 
 .container{
 padding:20px;
+max-width:800px;
+margin:auto;
 }
 
 .playlist-card{
 background:#10182b;
 border:1px solid #1b2235;
 border-radius:14px;
+padding:18px;
+margin-bottom:15px;
+transition:.2s;
+}
+
+.playlist-card:hover{
+border-color:#1ed760;
+}
+
+.playlist-link{
+text-decoration:none;
+color:white;
+display:block;
+}
+
+.playlist-title{
+font-size:18px;
+font-weight:700;
+margin-bottom:8px;
+}
+
+.playlist-info{
+color:#9ca3af;
+font-size:14px;
+margin-bottom:12px;
+}
+
+.progress{
+height:8px;
+background:#1b2235;
+border-radius:20px;
+overflow:hidden;
+}
+
+.progress-bar{
+height:100%;
+background:#1ed760;
+}
+
+.back-btn{
+display:inline-block;
+margin-top:20px;
+padding:12px 18px;
+background:#1ed760;
+color:black;
+text-decoration:none;
+border-radius:10px;
+font-weight:600;
+}
+</style>
+
+</head>
+<body>
+
+<div class="header">
+<h1>🎵 All Playlists</h1>
+</div>
+
+<div class="container">
+
+<a href="indie-trending.html" class="playlist-link">
+<div class="playlist-card">
+
+<div class="playlist-title">
+🎵 Indie Trending
+</div>
+
+<div class="playlist-info">
+Trending indie artists and emerging underground releases
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:96%"></div>
+</div>
+
+</div>
+</a>
+
+<div class="playlist-card">
+
+<div class="playlist-title">
+☀️ Summer Push
+</div>
+
+<div class="playlist-info">
+Seasonal streaming campaign playlist
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:89%"></div>
+</div>
+
+</div>
+
+<div class="playlist-card">
+
+<div class="playlist-title">
+🚀 Comeback Week
+</div>
+
+<div class="playlist-info">
+Artist comeback support campaign
+</div>
+
+<div class="progress">
+<div class="progress-bar" style="width:100%"></div>
+</div>
+
+</div>
+
+<a href="index.html" class="back-btn">
+← Dashboard
+</a>
+
+</div>
+
+</body>
+</html>border-radius:14px;
 padding:18px;
 margin-bottom:15px;
 }
