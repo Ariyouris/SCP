@@ -3,17 +3,23 @@ const CLIENT_ID =
 
 window.onload = () => {
 
-  if (localStorage.getItem("s4s_user")) {
-    window.location.href = "./dashboard.html";
-    return;
-  }
-
   google.accounts.id.initialize({
+
     client_id: CLIENT_ID,
+
     callback: handleCredentialResponse
+
   });
 
 };
+
+document
+.getElementById("googleLogin")
+.addEventListener("click", () => {
+
+  google.accounts.id.prompt();
+
+});
 
 function handleCredentialResponse(response) {
 
