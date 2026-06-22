@@ -35,3 +35,17 @@ document.getElementById("logout").onclick = () => {
     window.location.href="./index.html";
 
 };
+
+const bars = document.querySelectorAll(".equalizer span");
+
+setInterval(() => {
+
+    bars.forEach(bar => {
+
+        const h = Math.floor(Math.random()*40)+8;
+
+        bar.style.height = h + "px";
+
+    });
+
+},120);
