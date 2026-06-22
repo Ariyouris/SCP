@@ -72,6 +72,7 @@ background:#10182b;
 border:1px solid #1b2235;
 border-radius:16px;
 padding:24px;
+margin-bottom:20px;
 }
 
 .progress-label{
@@ -117,6 +118,28 @@ margin-top:12px;
 font-size:13px;
 color:#6b7280;
 text-align:center;
+}
+
+.track-card{
+background:#10182b;
+border:1px solid #1b2235;
+border-radius:16px;
+padding:24px;
+}
+
+.track-title{
+font-size:22px;
+font-weight:700;
+margin-bottom:15px;
+}
+
+.track{
+padding:12px;
+border:1px solid #1b2235;
+border-radius:10px;
+margin-bottom:10px;
+background:#0a0f1d;
+word-break:break-all;
 }
 
 .footer{
@@ -182,11 +205,51 @@ Complete all playlist songs to unlock check-in.
 
 </div>
 
+<div class="track-card">
+
+<div class="track-title">
+Track List
+</div>
+
+<div id="song-list">
+Loading tracks...
+</div>
+
+</div>
+
 </div>
 
 <div class="footer">
 Stream4Stream Playlist Page
 </div>
+
+<script>
+async function loadTracks() {
+  try {
+    const response = await fetch("tracks.json");
+    const data = await response.json();
+
+    const songList = document.getElementById("song-list");
+
+    songList.innerHTML = "";
+
+    data.tracks.forEach((track, index) => {
+      songList.innerHTML += `
+        <div class="track">
+          <strong>#${index + 1}</strong><br>
+          ${track.url}
+        </div>
+      `;
+    });
+
+  } catch (error) {
+    document.getElementById("song-list").innerHTML =
+      "<div class='track'>Failed to load tracks.json</div>";
+  }
+}
+
+loadTracks();
+</script>
 
 </body>
 </html>
