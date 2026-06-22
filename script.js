@@ -3,12 +3,14 @@ const CLIENT_ID =
 
 window.onload = () => {
 
+  // Kalau sudah login, langsung masuk dashboard
+  if (localStorage.getItem("s4s_user")) {
+    window.location.href = "./pages/dashboard.html";
+    return;
+  }
+
   google.accounts.id.initialize({
-
-    client_id: CLIENT_ID,
-
-    callback: handleCredentialResponse
-
+    client_id: CLIENT_ID
   });
 
 };
@@ -17,32 +19,44 @@ document
 .getElementById("googleLogin")
 .addEventListener("click", () => {
 
-  google.accounts.id.renderButton(
-
-    document.createElement("div"),
-
-    {}
-
-  );
-
-  google.accounts.oauth2.initTokenClient({
+  const tokenClient = google.accounts.oauth2.initTokenClient({
 
     client_id: CLIENT_ID,
 
     scope: "openid email profile",
 
-    callback: (response) => {
+    callback: async (response) => {
 
-      console.log(response);
+      try {
+
+        const res = await fetch(
+          "https://www.googleapis.com/oauth2/v3/userinfo",
+          {
+            headers: {
+              Authorization: `Bearer ${response.access_token}`
+            }
+          }
+        );
+
+        const user = await res.json();
+
+        localStorage.setItem(
+          "s4s_user",
+          JSON.stringify(user)
+        );
+
+        window.location.href = "./pages/dashboard.html";
+
+      } catch (err) {
+
+        console.error("Login gagal:", err);
+
+      }
 
     }
 
-  }).requestAccessToken();
+  });
+
+  tokenClient.requestAccessToken();
 
 });
-
-function handleCredentialResponse(response){
-
-  console.log(response);
-
-}
