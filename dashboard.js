@@ -12,6 +12,18 @@ const ADMINS = [
     "suparmituman@gmail.com"
 ];
 
+const isAdmin = ADMINS.includes(user.email.toLowerCase());
+
+if (isAdmin) {
+
+    document.getElementById("welcome").innerHTML =
+    "WELCOME, ADMIN";
+
+    document.getElementById("manage").style.display =
+    "block";
+
+}
+
 // Cek Role
 const isAdmin = ADMINS.includes(user.email.toLowerCase());
 
