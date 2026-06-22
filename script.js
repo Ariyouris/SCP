@@ -1,8 +1,8 @@
-const CLIENT_ID = "...";
+const CLIENT_ID = "475553127157-nn2o47e7273qrk4rp46aljldoks35bbm.apps.googleusercontent.com";
 
 window.onload = () => {
 
-  // Sudah login? Langsung dashboard
+  // Kalau sudah login, langsung dashboard
   if (localStorage.getItem("s4s_user")) {
     window.location.href = "./pages/dashboard.html";
     return;
