@@ -51,6 +51,6 @@ function handleCredentialResponse(response) {
 
   window.location.href =
 
-    "./dashboard.html";
+    "./pages/dashboard.html";
 
 }
